@@ -8,9 +8,18 @@ const EditTextInput = styled.TextInput`
   background-color: ${(props) => props.theme.colors.vgBlackAlpha20};
 `;
 
-type EditTextProps = React.ComponentProps<typeof TextInput>;
+type EditTextProps = React.ComponentProps<typeof TextInput> & {
+  onKeyUp ?: ({value,name} : {value:string,name:string}) => void;
+  name : string;
+};
 const EditText = (props: EditTextProps) => {
-  return <EditTextInput {...props} />;
+  const handlerOnKeyPress = (text: string) => {
+      props.onKeyUp && props.onKeyUp({
+          value : text,
+          name : props.name
+      });
+  }
+  return <EditTextInput {...props} onChangeText={handlerOnKeyPress} />;
 };
 
 export default EditText;

@@ -1,3 +1,5 @@
+import firebase from "firebase";
+
 var firebaseConfig = {
     apiKey: "AIzaSyDMQqMfKrwJ0t3pl0nAb8BkUWTn2uUa_JM",
     authDomain: "game-tutti-frutti.firebaseapp.com",
@@ -9,8 +11,7 @@ var firebaseConfig = {
     measurementId: "G-3BQ2QTK61Q"
 };
 
-if ( firebase.app.lengths === 0)
+if ( firebase.app.length === 0)
     firebase.initializeApp(firebaseConfig);
 
-
-const firebaseFirestore = firebase.firestore();
+export const firebaseFirestore = firebase.firestore();
