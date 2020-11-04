@@ -1,12 +1,11 @@
-import React, { useEffect } from "react";
-import { Button, KeyboardAvoidingView, ScrollView } from "react-native";
+import React from "react";
+import { Button, KeyboardAvoidingView } from "react-native";
 import { useDispatch, useSelector } from "react-redux";
-import { gamingActions } from "../../../features/gaming";
-import { RootState } from "../../../store";
+import { gamingActions, gamingSelectors } from "../../../features/gaming";
 import DividerContainer from "../../components/atoms/Dividers/DividerContainer";
-import EditText from "../../components/atoms/Inputs/EditText";
-import ProgressBar from "../../components/atoms/Status/ProgressBar";
 import FlexWrapper from "../../components/atoms/Wrappers/FlexWrapper";
+import ListEditTextWord from "./ListEditTextWord";
+import ProgressCompleteFields from "./ProgressCompleteFields";
 
 const listWords = [
   {
@@ -37,36 +36,18 @@ const listWords = [
 
 const GamingScreen = () => {
   const dispatch = useDispatch();
-  const words = useSelector<RootState>(state => state.gaming.words);
-  const percentage = useSelector<RootState>(state => state.gaming.percentage) as number;
-  useEffect(() => {
-    dispatch(gamingActions.fillData({words:listWords}));
-  },[]);
-
-  useEffect(() => {
-      dispatch(gamingActions.calculatePercentage({}))
-  },[words]);
-
+  const isComplete = useSelector(gamingSelectors.isComplete) as boolean;
+  
   return (
     <FlexWrapper>
       <KeyboardAvoidingView>
+        <ProgressCompleteFields/>
+        <ListEditTextWord/>
         <DividerContainer m="40px 10px">
-                <ProgressBar percentage={percentage} />
-        </DividerContainer>
-        <ScrollView>
-          {listWords.map((e, i) => (
-            <DividerContainer key={i} m="40px 10px">
-              <EditText placeholder={e.key} defaultValue={e.value}  name={e.key} onKeyUp={({name,value}) => {
-                  dispatch(gamingActions.writeWord({
-                      key:name,
-                      value
-                  }))
-              }} />
-            </DividerContainer>
-          ))}
-        </ScrollView>
-        <DividerContainer m="40px 10px">
-            <Button onPress={()=>console.log(words)} title="send" />
+        <Button onPress={()=>console.log("ok")} title="send" disabled={isComplete} />
+        <Button onPress={()=>{
+          dispatch(gamingActions.fillData({words:listWords}));
+        }} title="Crear nueva sala"  />
         </DividerContainer>
       </KeyboardAvoidingView>
     </FlexWrapper>
