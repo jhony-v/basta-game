@@ -1,0 +1,17 @@
+{
+     "colorize.languages": [
+         "css",
+         "sass",
+         "scss",
+         "less",
+         "postcss",
+         "sss",
+         "stylus",
+         "xml",
+         "svg",
+         "typescript",
+         "javascript"
+     ],
+     "files.autoSave": "onFocusChange",
+     "files.autoSaveDelay": 500
+}

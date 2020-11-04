@@ -1,21 +1,26 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React from "react";
+import "react-native-gesture-handler";
+import LayoutReduxProvider from "./ui/providers/LayoutReduxProvider";
+import LayoutThemeProvider from "./ui/providers/LayoutThemeProvider";
+import { NavigationContainer } from "@react-navigation/native";
+import { createStackNavigator } from "@react-navigation/stack";
+import routes from "./routes";
 
 export default function App() {
+  const { Screen, Navigator } = createStackNavigator();
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <LayoutReduxProvider>
+      <LayoutThemeProvider>
+        <NavigationContainer>
+          <Navigator initialRouteName={routes.auth.name} screenOptions={{
+            header : () => null
+          }}>
+            <Screen {...routes.auth} />
+            <Screen {...routes.gaming} />
+            <Screen {...routes.gamingStatus} />
+          </Navigator>
+        </NavigationContainer>
+      </LayoutThemeProvider>
+    </LayoutReduxProvider>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
