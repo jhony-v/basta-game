@@ -1,8 +1,11 @@
 import React from "react";
-import FlexWrapper from "../../ui/components/atoms/Wrappers/FlexWrapper";
+import EditText from "../../components/atoms/Inputs/EditText";
+import ProgressBar from "../../components/atoms/Status/ProgressBar";
+import FlexWrapper from "../../components/atoms/Wrappers/FlexWrapper";
 
 const AuthScreen = () => {
-  return <FlexWrapper></FlexWrapper>;
+  return <FlexWrapper>
+  </FlexWrapper>;
 };
 
 export default AuthScreen;

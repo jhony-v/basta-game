@@ -1,10 +1,11 @@
 import React from 'react'
+import FlexWrapper from '../../components/atoms/Wrappers/FlexWrapper'
 
 const GamingScreen = () => {
     return (
-        <div>
+        <FlexWrapper>
             
-        </div>
+        </FlexWrapper>
     )
 }
 

@@ -12,6 +12,6 @@
          "typescript",
          "javascript"
      ],
-     "files.autoSave": "onFocusChange",
+     "files.autoSave": "afterDelay",
      "files.autoSaveDelay": 500
 }

@@ -1,6 +1,6 @@
-import AuthScreen from "../screens/AuthScreen";
-import GamingScreen from "../screens/GamingScreen";
-import GamingStatusScreen from "../screens/GamingStatusScreen";
+import AuthScreen from "../ui/screens/AuthScreen";
+import GamingScreen from "../ui/screens/GamingScreen";
+import GamingStatusScreen from "../ui/screens/GamingStatusScreen";
 
 const routes = {
   auth: {
