@@ -12,10 +12,11 @@ export default function App() {
     <LayoutReduxProvider>
       <LayoutThemeProvider>
         <NavigationContainer>
-          <Navigator initialRouteName={routes.auth.name} headerMode="none">
+          <Navigator initialRouteName={routes.gamingStatus.name} headerMode="none">
             <Screen {...routes.auth} />
             <Screen {...routes.gaming} />
             <Screen {...routes.gamingStatus} />
+            <Screen {...routes.showLetter} />
           </Navigator>
         </NavigationContainer>
       </LayoutThemeProvider>

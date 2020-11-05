@@ -7,7 +7,7 @@ import ProgressBar from '../../../components/atoms/Status/ProgressBar';
 const ProgressCompleteFields = () => {
     const percentage = useSelector<RootState>(state => state.gaming.percentage) as number;
     return (
-    <DividerContainer m="40px 10px">
+    <DividerContainer mv="5px">
         <ProgressBar percentage={percentage} />
     </DividerContainer>
     )

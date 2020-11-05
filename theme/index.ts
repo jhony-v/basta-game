@@ -1,7 +1,13 @@
 export const lightTheme = {
   colors: {
-    vgPrimary: "#1976d2",
+    vgPrimary: "#29E5E5",
     vgPrimaryAlpha10: "#2196f3",
+    vgSecondary: "#AE13F8",
+    vgSecondaryAlpha10: "#B93CF4",
+    vgThird: "#F0F410",
+    vgThirdAlpha10: "#FFB904",
+    vgScreen: "#29b6f6",
+    vgBlack: "#000",
     vgBlackAlpha00: "#ffffff",
     vgBlackAlpha10: "#fafafa",
     vgBlackAlpha12: "#f0f0f0",
@@ -10,15 +16,19 @@ export const lightTheme = {
     vgBlackAlpha40: "#424242",
     vgBlackAlpha50: "rgb(30,30,30)",
     vgBlackAlpha60: "rgba(0, 0, 0, 0.02)",
-    vgBlack : "#000",
-    vgScreen: "#29b6f6",
   },
 };
 
 export const darkTheme = {
   colors: {
-    vgPrimary: "#1976d2",
+    vgPrimary: "#29E5E5",
     vgPrimaryAlpha10: "#2196f3",
+    vgSecondary: "#AE13F8",
+    vgSecondaryAlpha10: "#B93CF4",
+    vgThird: "#F0F410",
+    vgThirdAlpha10: "#FFB904",
+    vgScreen: "#000",
+    vgBlack: "#000",
     vgBlackAlpha00: "#ffffff",
     vgBlackAlpha10: "#fafafa",
     vgBlackAlpha12: "#f0f0f0",
@@ -27,7 +37,5 @@ export const darkTheme = {
     vgBlackAlpha40: "#424242",
     vgBlackAlpha50: "rgb(30,30,30)",
     vgBlackAlpha60: "rgba(0, 0, 0, 0.02)",
-    vgBlack : "#000",
-    vgScreen: "#000",
   },
 };

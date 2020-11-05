@@ -9,8 +9,6 @@ type DividerContainerTypes = {
   mh?: string;
   h?: string;
   w?: string;
-  flexNone?: boolean;
-  inlineBlock?: boolean;
   absolute?: {
     left?: string;
     right?: string;
@@ -20,12 +18,10 @@ type DividerContainerTypes = {
 };
 
 const DividerContainer = styled.View<DividerContainerTypes>`
-  padding:${(props) => props.p || "0"};
-  margin:${(props) => props.m || "0"};
+  ${props => props.p && css`padding:${props.p};`};
+  ${props => props.m && css`margin:${props.m};`};
   width:${(props) => props.w};
-  height:${(props) => props.h};
-  flex:${(props) => props.flexNone && "none"};
-  display:${(props) => props.inlineBlock && "inline-block"};
+  height:${(props) => props.h}; 
   ${({ absolute }) =>
     absolute &&
     css`

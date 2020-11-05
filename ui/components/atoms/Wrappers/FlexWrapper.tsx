@@ -1,6 +1,15 @@
-import styled from "styled-components/native";
+import styled, { css } from "styled-components/native";
 
-export default styled.View`
+type FlexWrapperTypes = {
+  isCenter?: boolean;
+};
+export default styled.View<FlexWrapperTypes>`
   flex: 1;
   background-color: ${(props) => props.theme.colors.vgScreen};
+  ${(props) =>
+    props.isCenter &&
+    css`
+      justify-content: center;
+      align-items: center;
+    `}
 `;

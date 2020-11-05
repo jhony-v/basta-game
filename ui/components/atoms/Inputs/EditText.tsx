@@ -6,6 +6,7 @@ import styled from "styled-components/native";
 const EditTextInput = styled.TextInput`
   font-weight:bold;
   color:${props => props.theme.colors.vgBlack};
+  box-shadow:none;
 `;
 const EditTextWrapper = styled.View`
   border-radius: 20px;

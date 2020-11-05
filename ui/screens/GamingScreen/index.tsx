@@ -1,11 +1,12 @@
-import React from "react";
-import { Button, KeyboardAvoidingView } from "react-native";
-import { useDispatch, useSelector } from "react-redux";
-import { gamingActions, gamingSelectors } from "../../../features/gaming";
+import React, { useEffect } from "react";
+import { ScrollView } from "react-native";
+import { useDispatch } from "react-redux";
+import { gamingActions } from "../../../features/gaming";
+import BaseButton from "../../components/atoms/Buttons/BaseButton";
 import DividerContainer from "../../components/atoms/Dividers/DividerContainer";
 import FlexWrapper from "../../components/atoms/Wrappers/FlexWrapper";
+import HeaderPreviewStatus from "./HeaderPreviewStatus";
 import ListEditTextWord from "./ListEditTextWord";
-import ProgressCompleteFields from "./ProgressCompleteFields";
 
 const listWords = [
   {
@@ -36,20 +37,20 @@ const listWords = [
 
 const GamingScreen = () => {
   const dispatch = useDispatch();
-  const isComplete = useSelector(gamingSelectors.isComplete) as boolean;
   
+  useEffect(() => {
+    dispatch(gamingActions.fillData({words:listWords}));
+  },[])
+
   return (
     <FlexWrapper>
-      <KeyboardAvoidingView>
-        <ProgressCompleteFields/>
+      <ScrollView>
+        <HeaderPreviewStatus/>
         <ListEditTextWord/>
-        <DividerContainer m="40px 10px">
-        <Button onPress={()=>console.log("ok")} title="send" disabled={isComplete} />
-        <Button onPress={()=>{
-          dispatch(gamingActions.fillData({words:listWords}));
-        }} title="Crear nueva sala"  />
+        <DividerContainer m="20px 10px">
+        <BaseButton onPress={()=>console.log("ok")} variant="secondary">TERMINAR</BaseButton>
         </DividerContainer>
-      </KeyboardAvoidingView>
+      </ScrollView>
     </FlexWrapper>
   );
 };
