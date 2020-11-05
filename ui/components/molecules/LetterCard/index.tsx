@@ -8,8 +8,8 @@ type LetterCardProps = {
 };
 const LetterCard = ({ letter, dimension }: LetterCardProps) => {
   return (
-    <BaseCardSquare dimension={dimension || "100px"}>
-      <BaseLabel weight color="vgSecondary" textSize="2rem">{letter}</BaseLabel>
+    <BaseCardSquare dimension={dimension || "120px"}>
+      <BaseLabel weight color="vgSecondary" textSize="40px">{letter}</BaseLabel>
     </BaseCardSquare>
   );
 };

@@ -19,7 +19,6 @@ const ProgressThumb = styled.View<ProgressThumbTypes>`
   ${shared};
   width: ${props => props.percentage || 0}%;
   background-color: ${(props) => props.theme.colors.vgSecondaryAlpha10};
-  transition: 0.3s width;
 `;
 
 const ProgressBar = ({percentage}:ProgressThumbTypes) => {

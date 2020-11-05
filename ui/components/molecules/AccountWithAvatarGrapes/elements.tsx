@@ -4,7 +4,7 @@ import FlexWrapper from "../../atoms/Wrappers/FlexWrapper";
 
 export const WrapperRoundedAvatar = styled.View`
   background-color: ${(props) => props.theme.colors.vgBlackAlpha00};
-  border-radius: 100%;
+  border-radius: 1000;
   padding: 10px;
 `;
 
@@ -12,7 +12,7 @@ export const WrapperCardLabel = styled(BaseCardSquare)`
   border-radius: 40px;
   width: auto;
   height: auto;
-  padding:10px;
+  padding:15px 40px;
   position:relative;
   z-index:0;
   top:-10px;

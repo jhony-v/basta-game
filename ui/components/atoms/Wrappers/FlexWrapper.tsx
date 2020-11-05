@@ -5,7 +5,6 @@ type FlexWrapperTypes = {
 };
 export default styled.View<FlexWrapperTypes>`
   flex: 1;
-  background-color: ${(props) => props.theme.colors.vgScreen};
   ${(props) =>
     props.isCenter &&
     css`

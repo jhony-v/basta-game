@@ -10,8 +10,8 @@ type BaseLabelTypes = {
 const BaseLabel = styled.Text<BaseLabelTypes>`
   font-weight:${(props) => props.weight ? "bold" : "normal"};
   color:${(props) => props.theme.colors[props.color || "vgBlack"]};
-  font-size:${props => props.textSize || "1rem"};
-  text-align:${props => props.textAlign};
+  font-size:${props => props.textSize || "13px"};
+  text-align:${props => props.textAlign || "left"};
 `;
 
 export default BaseLabel;

@@ -16,10 +16,10 @@ const HeaderPreviewStatus = () => {
         </DividerContainer>
         <DividerContainer m="0 0 0 10px" style={{flex:2}}>
             <DividerContainer>
-                <BaseLabel weight textSize="2em" color="vgBlackAlpha00">Avance</BaseLabel>
+                <BaseLabel weight textSize="20px" color="vgBlackAlpha00">Avance</BaseLabel>
                 <ProgressCompleteFields/>
             </DividerContainer>
-            <BaseLabel textSize="1rem" color="vgBlackAlpha00">Queda 5 seconds</BaseLabel>
+            <BaseLabel textSize="13px" color="vgBlackAlpha00">Queda 5 seconds</BaseLabel>
         </DividerContainer>
       </DividerContainerHorizontal>
     </DividerContainer>

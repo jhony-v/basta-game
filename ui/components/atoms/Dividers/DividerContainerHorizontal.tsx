@@ -5,5 +5,5 @@ type DividerProps = {
 }
 export default styled.View<DividerProps>`
     flex-direction:row;
-    align-items:${props => props.alignCenter && "center"};
+    align-items:${props => props.alignCenter ? "center" : "flex-start"};
 `

@@ -10,7 +10,7 @@ const FormAuthButtons = () => {
         <BaseLabel
           weight
           color="vgBlackAlpha00"
-          textSize=".8rem"
+          textSize="12px"
           textAlign="center"
         >
           Solo una vez

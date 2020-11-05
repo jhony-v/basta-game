@@ -5,7 +5,7 @@ import BaseLabel from "../../../components/atoms/Labels/BaseLabel";
 const Title = () => {
   return (
     <DividerContainer p="20px 0px 120px">
-      <BaseLabel weight textSize="2em" color="vgBlackAlpha00">
+      <BaseLabel weight textSize="40px" color="vgBlackAlpha00">
         Un nombre para conocerte
       </BaseLabel>
     </DividerContainer>

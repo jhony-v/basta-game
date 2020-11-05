@@ -9,12 +9,12 @@ const HeaderPreviewLetter = () => {
     <DividerContainer m="10px 30px">
       <DividerContainerHorizontal alignCenter>
         <DividerContainer style={{flex:1}}>
-          <BaseLabel color="vgBlackAlpha00" weight textSize="2.3em">
+          <BaseLabel color="vgBlackAlpha00" weight textSize="50px">
             Letter
           </BaseLabel>
         </DividerContainer>
         <DividerContainer>
-            <LetterCard letter="A" dimension="45px" />
+            <LetterCard letter="A" dimension="120px" />
         </DividerContainer>
       </DividerContainerHorizontal>
     </DividerContainer>

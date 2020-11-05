@@ -4,9 +4,9 @@ type BaseCardSquareTypes = {
   dimension?: string;
 };
 export default styled.View<BaseCardSquareTypes>`
-  border-radius: 12px;
-  width: ${(props) => props.dimension || "50px"};
-  height: ${(props) => props.dimension || "50px"};
+  border-radius: 15px;
+  width: ${(props) => props.dimension || "90px"};
+  height: ${(props) => props.dimension || "90px"};
   background-color:${props => props.theme.colors.vgBlackAlpha00};
   flex:none;
   justify-content:center;

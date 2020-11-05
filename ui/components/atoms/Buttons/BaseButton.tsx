@@ -15,7 +15,7 @@ const setBackgroundTheme = (primary : string,border: string) => {
 }
 const WrapperButton = styled.View<WrapperButtonTypes>`
   border-radius: 20px;
-  padding: 10px;
+  padding: 20px;
   justify-content: center;
   align-items: center;
   box-shadow:0 1px 2px rgba(0,0,0,.2);  

@@ -1,10 +1,11 @@
 import React from 'react'
+import { View } from 'react-native'
 
 const ListLettersWithValue = () => {
     return (
-        <div>
+        <View>
             
-        </div>
+        </View>
     )
 }
 

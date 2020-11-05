@@ -4,6 +4,7 @@ import { useDispatch } from "react-redux";
 import { gamingActions } from "../../../features/gaming";
 import BaseButton from "../../components/atoms/Buttons/BaseButton";
 import DividerContainer from "../../components/atoms/Dividers/DividerContainer";
+import DrawerWrapper from "../../components/atoms/Wrappers/DrawerWrapper";
 import FlexWrapper from "../../components/atoms/Wrappers/FlexWrapper";
 import HeaderPreviewStatus from "./HeaderPreviewStatus";
 import ListEditTextWord from "./ListEditTextWord";
@@ -43,7 +44,7 @@ const GamingScreen = () => {
   },[])
 
   return (
-    <FlexWrapper>
+    <DrawerWrapper>
       <ScrollView>
         <HeaderPreviewStatus/>
         <ListEditTextWord/>
@@ -51,7 +52,7 @@ const GamingScreen = () => {
         <BaseButton onPress={()=>console.log("ok")} variant="secondary">TERMINAR</BaseButton>
         </DividerContainer>
       </ScrollView>
-    </FlexWrapper>
+    </DrawerWrapper>
   );
 };
 

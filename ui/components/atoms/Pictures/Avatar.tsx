@@ -6,9 +6,9 @@ type ImageAvatarTypes = {
 };
 
 const ImageAvatar = styled.Image<ImageAvatarTypes>`
-  border-radius: 100%;
-  width: ${(props) => props.dimension || "40px"};
-  height: ${(props) => props.dimension || "40px"};
+  border-radius: 1000;
+  width: ${(props) => props.dimension || "60px"};
+  height: ${(props) => props.dimension || "60px"};
   background-color:${props => props.theme.colors.vgBlackAlpha10};
 `;
 

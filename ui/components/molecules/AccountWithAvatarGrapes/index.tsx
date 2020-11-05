@@ -10,17 +10,17 @@ import {
 } from "./elements";
 
 type AccountWithAvatarGrapesProps = {
-  image?: string;
+  avatar?: string;
   username?: string;
 };
 const AccountWithAvatarGrapes = (props: AccountWithAvatarGrapesProps) => {
   return (
       <WrapperGrapes>
         <WrapperRoundedAvatar>
-          <Avatar image={props.image} />
+          <Avatar image={props.avatar} />
         </WrapperRoundedAvatar>
         <WrapperCardLabel>
-          <BaseLabel>{props.username}</BaseLabel>
+          <BaseLabel weight>{props.username}</BaseLabel>
         </WrapperCardLabel>
       </WrapperGrapes>
   );

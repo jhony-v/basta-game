@@ -1,17 +1,43 @@
 import React from "react";
 import { ScrollView } from "react-native";
-import FlexWrapper from "../../components/atoms/Wrappers/FlexWrapper";
+import { FlatList } from "react-native-gesture-handler";
+import BaseButton from "../../components/atoms/Buttons/BaseButton";
+import EditText from "../../components/atoms/Inputs/EditText";
+import DrawerWrapper from "../../components/atoms/Wrappers/DrawerWrapper";
+import ListLettersWritingsByUser from "../../components/organisms/ListLettersWritingsByUser";
 import HeaderPreviewLetter from "./HeaderPreviewLetter";
-import ListLettersWithValue from "./ListLettersWithValue";
+import {
+  GridColumnWrapper,
+  GridWrapper,
+} from "./ListLettersWithValue/elements";
 
 const GamingStatusScreen = () => {
   return (
-    <FlexWrapper>
+    <DrawerWrapper>
       <ScrollView>
-        <HeaderPreviewLetter/>
-        <ListLettersWithValue/>
+        <HeaderPreviewLetter />
+        <GridWrapper>
+          <GridColumnWrapper>
+            <ListLettersWritingsByUser
+              data={[]}
+              user={{
+                avatar: "",
+                username: "Jhony vega",
+              }}
+            />
+          </GridColumnWrapper>
+          <GridColumnWrapper>
+            <ListLettersWritingsByUser
+              data={[]}
+              user={{
+                avatar: "",
+                username: "Jhony vega",
+              }}
+            />
+          </GridColumnWrapper>
+        </GridWrapper>
       </ScrollView>
-    </FlexWrapper>
+    </DrawerWrapper>
   );
 };
 

@@ -4,7 +4,7 @@ export const lightTheme = {
     vgPrimaryAlpha10: "#2196f3",
     vgSecondary: "#AE13F8",
     vgSecondaryAlpha10: "#B93CF4",
-    vgThird: "#F0F410",
+    vgThird: "#F0D000",
     vgThirdAlpha10: "#FFB904",
     vgScreen: "#29b6f6",
     vgBlack: "#000",
