@@ -10,7 +10,8 @@ export const lightTheme = {
     vgBlackAlpha40: "#424242",
     vgBlackAlpha50: "rgb(30,30,30)",
     vgBlackAlpha60: "rgba(0, 0, 0, 0.02)",
-    vgScreen: "#F2F3F5",
+    vgBlack : "#000",
+    vgScreen: "#29b6f6",
   },
 };
 
@@ -26,6 +27,7 @@ export const darkTheme = {
     vgBlackAlpha40: "#424242",
     vgBlackAlpha50: "rgb(30,30,30)",
     vgBlackAlpha60: "rgba(0, 0, 0, 0.02)",
+    vgBlack : "#000",
     vgScreen: "#000",
   },
 };
