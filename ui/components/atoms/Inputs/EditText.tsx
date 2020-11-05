@@ -1,4 +1,4 @@
-import React from "react";
+import React, { forwardRef } from "react";
 import { TextInput } from "react-native";
 import styled from "styled-components/native";
 
@@ -12,14 +12,15 @@ type EditTextProps = React.ComponentProps<typeof TextInput> & {
   onKeyUp ?: ({value,name} : {value:string,name:string}) => void;
   name : string;
 };
-const EditText = (props: EditTextProps) => {
+
+const EditText = forwardRef<TextInput,EditTextProps>((props,ref) => {
   const handlerOnKeyPress = (text: string) => {
       props.onKeyUp && props.onKeyUp({
           value : text,
           name : props.name
       });
   }
-  return <EditTextInput {...props} onChangeText={handlerOnKeyPress} />;
-};
+  return <EditTextInput {...props} ref={ref} onChangeText={handlerOnKeyPress} />;
+});
 
 export default EditText;

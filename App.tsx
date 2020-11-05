@@ -12,9 +12,7 @@ export default function App() {
     <LayoutReduxProvider>
       <LayoutThemeProvider>
         <NavigationContainer>
-          <Navigator initialRouteName={routes.gaming.name} screenOptions={{
-            header : () => null
-          }}>
+          <Navigator initialRouteName={routes.auth.name} headerMode="none">
             <Screen {...routes.auth} />
             <Screen {...routes.gaming} />
             <Screen {...routes.gamingStatus} />
