@@ -6,6 +6,7 @@ import EditText from "../../components/atoms/Inputs/EditText";
 import DrawerWrapper from "../../components/atoms/Wrappers/DrawerWrapper";
 import ListLettersWritingsByUser from "../../components/organisms/ListLettersWritingsByUser";
 import HeaderPreviewLetter from "./HeaderPreviewLetter";
+import ListLettersWithValue from "./ListLettersWithValue";
 import {
   GridColumnWrapper,
   GridWrapper,
@@ -16,26 +17,7 @@ const GamingStatusScreen = () => {
     <DrawerWrapper>
       <ScrollView>
         <HeaderPreviewLetter />
-        <GridWrapper>
-          <GridColumnWrapper>
-            <ListLettersWritingsByUser
-              data={[]}
-              user={{
-                avatar: "",
-                username: "Jhony vega",
-              }}
-            />
-          </GridColumnWrapper>
-          <GridColumnWrapper>
-            <ListLettersWritingsByUser
-              data={[]}
-              user={{
-                avatar: "",
-                username: "Jhony vega",
-              }}
-            />
-          </GridColumnWrapper>
-        </GridWrapper>
+        <ListLettersWithValue/>
       </ScrollView>
     </DrawerWrapper>
   );

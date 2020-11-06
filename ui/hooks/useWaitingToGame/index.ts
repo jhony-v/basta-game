@@ -8,10 +8,10 @@ const useWaitingToGame = () => {
     const gameId = useSelector(gamingSelectors.getGameId);
     const dispatch = useDispatch();
     useEffect(() => {
-      const subcriber = firebaseServiceGetStatusGame(gameId,(request) => {
+      const subscriber = firebaseServiceGetStatusGame(gameId,(request) => {
         dispatch(gamingActions.getStatusGaming(request))
       });
-      return () => subcriber() 
+      return () => subscriber() 
     },[])
 
     return {

@@ -4,7 +4,7 @@ import FlexWrapper from "../../atoms/Wrappers/FlexWrapper";
 
 export const WrapperRoundedAvatar = styled.View`
   background-color: ${(props) => props.theme.colors.vgBlackAlpha00};
-  border-radius: 1000;
+  border-radius: 1000px;
   padding: 10px;
 `;
 

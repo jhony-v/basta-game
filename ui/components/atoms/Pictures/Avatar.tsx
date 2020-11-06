@@ -6,7 +6,7 @@ type ImageAvatarTypes = {
 };
 
 const ImageAvatar = styled.Image<ImageAvatarTypes>`
-  border-radius: 1000;
+  border-radius: 1000px;
   width: ${(props) => props.dimension || "60px"};
   height: ${(props) => props.dimension || "60px"};
   background-color:${props => props.theme.colors.vgBlackAlpha10};

@@ -14,10 +14,8 @@ const gamingSlice = createSlice({
     gaming: false,
   },
   reducers: {
-    fillData(state, { payload: { words, letter, id } }) {
+    fillData(state, { payload: { words } }) {
       state.words = words;
-      state.letter = letter;
-      state.id = id;
     },
     writeWord(state: GamingState, { payload: { key, value } }) {
       state.words = state.words.map((e) => {
@@ -49,6 +47,10 @@ export const gamingSelectors = {
   getGameId: createSelector(
       (state: RootState) => state.gaming,
       (gaming) => gaming.id
+  ),
+  getWords : createSelector(
+    (state: RootState) => state.gaming,
+    (gaming) => gaming.words
   ),
   progressCompleteWordsGaming :  createSelector(
       (state: RootState) => state.gaming,

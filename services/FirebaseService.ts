@@ -19,8 +19,8 @@ export const firebaseServiceCreateNewRoom = ({id,...rest} : {id:string,gaming:bo
 }
 
 export const firebaseServiceGetDataFromGame = (id : string,callback: (data : any) => void) => {
-    const unsubscribe = firebaseFirestore.collection("games").doc(id).onSnapshot(request => {
-        const requestData = request.data;
+    const unsubscribe = firebaseFirestore.collection("games").doc(id).collection("words").onSnapshot(request => {
+        const requestData = request.docs.map(item=>item.data());
         callback(requestData); 
     })
     return unsubscribe;

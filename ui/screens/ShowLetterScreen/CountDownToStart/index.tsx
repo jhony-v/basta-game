@@ -11,17 +11,11 @@ import useTimerCountDown from '../../../hooks/useTimerCountDown'
 
 const CountDownToStart = () => {
     const { letter } = useSelector(gamingSelectors.gamingStatus);
-    const { timer, running ,  startRunning } = useTimerCountDown({from:3});
+    const { timer, running } = useTimerCountDown({from:3,autostart:true});
     const { navigate } = useNavigation();
 
     useEffect(() => {
-        startRunning();
-    },[]);
-
-    useEffect(() => {
-        if(timer === 0) {
-            navigate(routes.gaming.name);
-        }
+        if(timer === 0) navigate(routes.gaming.name);
     },[running]);
 
     return (

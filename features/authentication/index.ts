@@ -1,4 +1,5 @@
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { createSelector, createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { RootState } from "../../store";
 
 const authSlice = createSlice({
   name: "authSlice",
@@ -39,3 +40,10 @@ const authSlice = createSlice({
 
 // actions and reducers
 export const { actions : authActions , reducer: authReducer } = authSlice;
+
+export const authSelectors = {
+  getUser : createSelector(
+    (state: RootState) => state.auth,
+    auth => auth.user
+  )
+}
