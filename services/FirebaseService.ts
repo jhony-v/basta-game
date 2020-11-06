@@ -1,17 +1,34 @@
 import { firebaseFirestore } from "../config/firebase"
-import { gamingActions } from "../features/gaming";
-import store from "../store"
+import { WordGame } from "../features/gaming/gaming";
 
-export const firebaseServiceGetStatusGame = (gameId : string ) => {
-    const unsubscribe = firebaseFirestore.collection("games").doc(gameId).onSnapshot(request => {
-        const status = request.get("gaming");
-        store.dispatch(gamingActions.getStatusGaming({
-            status
-        }));
+interface StatusGaming {
+    gaming : boolean;
+    letter : string;
+}
+export const firebaseServiceGetStatusGame = (id : string, callback : (status:StatusGaming) => void ) => {
+    const unsubscribe = firebaseFirestore.collection("games").doc(id).onSnapshot(request => {
+        const gaming = request.get("gaming");
+        const letter = request.get("letter");
+        callback({gaming,letter});
     });
     return unsubscribe;
 } 
 
 export const firebaseServiceCreateNewRoom = ({id,...rest} : {id:string,gaming:boolean,letter:string}) => {
     return firebaseFirestore.collection("games").doc(id).set(rest);
+}
+
+export const firebaseServiceGetDataFromGame = (id : string,callback: (data : any) => void) => {
+    const unsubscribe = firebaseFirestore.collection("games").doc(id).onSnapshot(request => {
+        const requestData = request.data;
+        callback(requestData); 
+    })
+    return unsubscribe;
+}
+
+export const firebaseServiceSendWordsToGame = ({id,words,user} : WordGame) => {
+    return firebaseFirestore.collection("games").doc(id).collection("words").add({
+        words,
+        user
+    });
 }

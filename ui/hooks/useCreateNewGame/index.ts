@@ -2,7 +2,6 @@ import { useDispatch } from "react-redux"
 import { gamingActions } from "../../../features/gaming";
 import { firebaseServiceCreateNewRoom } from "../../../services/FirebaseService";
 
-
 const randomLetterFromAlphabet = () => {
     const codeA = "a".charCodeAt(0);
     const codeZ = "z".charCodeAt(0);
@@ -16,12 +15,16 @@ const randomLetterFromAlphabet = () => {
     }
 }
 
+const getRandomId = () => {
+    return (Math.random().toString(8)+Date.now()).replace("0.","").substring(0,10);
+}
+
 const getRandomLetter = randomLetterFromAlphabet();
 
 const useCreateNewGame = () => {
     const dispatch = useDispatch();
     const createNewGame = () => {
-        const id = (Math.random().toString(8)+Date.now()).replace("0.","").substring(0,10);
+        const id = getRandomId();
         const randomLetter = getRandomLetter();
         const data = {
             id,
@@ -29,7 +32,7 @@ const useCreateNewGame = () => {
             letter : randomLetter
         };
         firebaseServiceCreateNewRoom(data).then(() => { 
-            dispatch(gamingActions.createNewGame({id}));
+            dispatch(gamingActions.setNewGameCode({id}));
         })
     }
     return {

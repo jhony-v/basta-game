@@ -1,7 +1,13 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, SliceCaseReducers } from "@reduxjs/toolkit";
 import { darkTheme, lightTheme } from "../../theme";
+import { ThemeBase } from "../../theme/theme";
 
-const manageThemeSlice = createSlice({
+export interface ManageThemeState {
+    status : boolean;
+    theme : ThemeBase.Global
+}
+
+const manageThemeSlice = createSlice<ManageThemeState,SliceCaseReducers<ManageThemeState>>({
     name : "manageThemeSlice",
     initialState : {
         status : true,
@@ -15,7 +21,4 @@ const manageThemeSlice = createSlice({
     }
 })
 
-const { actions, reducer } = manageThemeSlice;
-
-export const manageThemeReducer = reducer;
-export const manageThemeActions = actions;
+export const { actions: manageThemeActions, reducer: manageThemeReducer } = manageThemeSlice;
