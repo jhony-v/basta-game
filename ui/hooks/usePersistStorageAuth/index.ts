@@ -1,4 +1,5 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import { useCallback, useLayoutEffect } from "react";
 import { useDispatch } from "react-redux";
 import { firebaseFirestore } from "../../../config/firebase";
 import { authActions } from "../../../features/authentication";
@@ -7,8 +8,10 @@ export interface AuthPersist {
     isAuth?: boolean,
     user: {
         id?: string,
-        username: string
-    }   
+        username: string,
+        fullName: string;
+    },
+    loading? : boolean;   
 }
 
 const setStorageAsync = async (payload : AuthPersist) => {
@@ -21,19 +24,25 @@ const getStorageAsync = async () : Promise<AuthPersist | null> => {
 };
 
 const usePersistStorageAuth = () => {
-    const dispatch = useDispatch();
-  
-    const setPersist = async (payload : AuthPersist) => {
+    const dispatch = useDispatch();  
+    const setPersist = useCallback(async (payload : AuthPersist) => {
         const userCreated = await firebaseFirestore.collection("users").add(payload.user);
         if(userCreated) {
-            setStorageAsync(payload).then(() => dispatch(authActions.addNewUser(payload)));
+            const processPayload = {
+                ...payload,
+                user : {
+                    ...payload.user,
+                    id : userCreated.id
+                }
+            }
+            setStorageAsync(processPayload).then(() => dispatch(authActions.addNewUser(processPayload)));
         }
-    }
+    },[])
 
-    const getPersist = async () => {
+    const getPersist = useCallback(async () => {
         const request = await getStorageAsync();
         if(request != null) dispatch(authActions.getUser(request));
-    }
+    },[])
 
     return {
         setPersist,

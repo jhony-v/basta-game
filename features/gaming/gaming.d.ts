@@ -10,4 +10,5 @@ export interface GamingState {
   timerToStart: number;
   timerCountDown: number;
   id: string;
+  gaming: boolean;
 }

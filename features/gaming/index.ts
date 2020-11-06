@@ -12,6 +12,7 @@ const gamingSlice = createSlice<GamingState,SliceCaseReducers<GamingState>>({
       timerToStart : 0,
       words : [],
       id : "",
+      gaming: false
   },
   reducers: {
     calculatePercentage(state) {
@@ -21,17 +22,25 @@ const gamingSlice = createSlice<GamingState,SliceCaseReducers<GamingState>>({
         const computePercentage = totalWordsNotEmpty / lenWords * 100;
         state.percentage = computePercentage;
     },
-    fillData(state,{payload:{ words , letter }}) { 
+    fillData(state,{payload:{ words , letter, id }}) { 
         state.words = words;
         state.letter = letter;
-        state.id = (Math.random().toString(8)+Date.now()).replace("0.","");
-        firebaseFirestore.collection("games").doc(state.id).set({})
+        state.id = id;
     },
     writeWord(state,{payload:{key,value}}) {
         state.words = state.words.map(e => {
             if(e.key === key) e.value = value;
             return e; 
         });
+    },
+    createNewGame(state,{payload:{id}}) {
+        state.id = id;
+    },
+    startGame(state) {
+        state.gaming = true;
+    },
+    endGame(state) {
+        state.gaming = false;
     }
   },
 });

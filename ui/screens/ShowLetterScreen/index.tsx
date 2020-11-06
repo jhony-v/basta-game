@@ -2,7 +2,6 @@ import React from "react";
 import DividerContainer from "../../components/atoms/Dividers/DividerContainer";
 import BaseLabel from "../../components/atoms/Labels/BaseLabel";
 import DrawerWrapper from "../../components/atoms/Wrappers/DrawerWrapper";
-import FlexWrapper from "../../components/atoms/Wrappers/FlexWrapper";
 import LetterCard from "../../components/molecules/LetterCard";
 
 const ShowLetterScreen = () => {

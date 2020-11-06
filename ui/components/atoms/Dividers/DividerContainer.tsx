@@ -20,8 +20,8 @@ type DividerContainerTypes = {
 const DividerContainer = styled.View<DividerContainerTypes>`
   ${props => props.p && css`padding:${props.p};`};
   ${props => props.m && css`margin:${props.m};`};
-  /* width:${(props) => props.w}; */
-  /* height:${(props) => props.h};  */
+  width:${(props) => props.w || "auto"};
+  height:${(props) => props.h || "auto"}; 
   ${({ absolute }) =>
     absolute &&
     css`
