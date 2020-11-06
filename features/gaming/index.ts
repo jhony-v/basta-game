@@ -1,9 +1,9 @@
-import { createSelector, createSlice, Selector, SliceCaseReducers } from "@reduxjs/toolkit";
+import { createSelector, createSlice, Dispatch, PayloadAction, SliceCaseReducers } from "@reduxjs/toolkit";
 import { firebaseFirestore } from "../../config/firebase";
 import { RootState } from "../../store";
 import { GamingState } from "./gaming";
 
-const gamingSlice = createSlice<GamingState,SliceCaseReducers<GamingState>>({
+const gamingSlice = createSlice({
   name: "roomChatSlice",
   initialState: {
       letter : "A",
@@ -27,7 +27,7 @@ const gamingSlice = createSlice<GamingState,SliceCaseReducers<GamingState>>({
         state.letter = letter;
         state.id = id;
     },
-    writeWord(state,{payload:{key,value}}) {
+    writeWord(state: GamingState,{payload:{key,value}}) {
         state.words = state.words.map(e => {
             if(e.key === key) e.value = value;
             return e; 
@@ -41,15 +41,22 @@ const gamingSlice = createSlice<GamingState,SliceCaseReducers<GamingState>>({
     },
     endGame(state) {
         state.gaming = false;
+    },
+    getStatusGaming(state,{payload}: PayloadAction<{status:boolean}>) {
+        state.gaming = payload.status;
     }
   },
 });
 
 const { actions, reducer } = gamingSlice;
-
 export const gamingReducer = reducer;
 export const gamingActions = actions;
+
 export const gamingSelectors = {
  isComplete : createSelector((state:RootState)=> state.gaming,gaming => gaming.percentage !== 100 )   
 }
 
+
+
+export const fetchStatusGaming = (gameId: string) => (dispatch : Dispatch) => {
+}
