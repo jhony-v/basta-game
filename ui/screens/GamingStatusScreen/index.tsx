@@ -17,7 +17,7 @@ const GamingStatusScreen = () => {
       <ScrollView>
         <HeaderPreviewLetter />
         <ListLettersWithValue/>
-        <DividerContainer pv="20px">
+        <DividerContainer p="20px">
           <BaseButton onPress={() => {
               dispatch(gamingActions.reset());
               navigate("createNewGame");

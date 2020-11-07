@@ -1,23 +1,23 @@
 import React from "react";
-import DividerContainer from "../../atoms/Dividers/DividerContainer";
-import DividerContainerHorizontal from "../../atoms/Dividers/DividerContainerHorizontal";
 import BaseLabel from "../../atoms/Labels/BaseLabel";
-import Avatar from "../../atoms/Pictures/Avatar";
 import {
   WrapperCardLabel,
   WrapperGrapes,
   WrapperRoundedAvatar,
 } from "./elements";
+import { AntDesign } from "@expo/vector-icons"
+import { useTheme } from "styled-components/native";
 
 type AccountWithAvatarGrapesProps = {
   avatar?: string;
   username?: string;
 };
 const AccountWithAvatarGrapes = (props: AccountWithAvatarGrapesProps) => {
+  const { colors : { vgPrimary } } = useTheme();
   return (
       <WrapperGrapes>
         <WrapperRoundedAvatar>
-          <Avatar image={props.avatar} />
+          <AntDesign name="hearto" size={25} color={vgPrimary} />
         </WrapperRoundedAvatar>
         <WrapperCardLabel>
           <BaseLabel weight>{props.username}</BaseLabel>

@@ -14,7 +14,7 @@ const EditTextGaming = ({word : {key,value}}:EditTextGamingProps) => {
     const dispatch = useDispatch();
     return (
     <DividerContainer m="20px 10px">
-        <EditText placeholder={key} defaultValue={value} name={key} onKeyUp={({name,value}) => {
+        <EditText placeholder={key} withIcon defaultValue={value} name={key} suptitle={key} onKeyUp={({name,value}) => {
             dispatch(gamingActions.writeWord({
                 key:name,
                 value

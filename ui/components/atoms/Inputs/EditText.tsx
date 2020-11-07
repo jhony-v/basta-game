@@ -3,6 +3,8 @@ import React, { forwardRef } from "react";
 import { TextInput } from "react-native";
 import styled from "styled-components/native";
 import BaseLabel from "../Labels/BaseLabel";
+import { AntDesign } from "@expo/vector-icons"
+import DividerContainer from "../Dividers/DividerContainer";
 
 const EditTextInput = styled.TextInput`
   font-weight:bold;
@@ -13,9 +15,11 @@ const EditTextInput = styled.TextInput`
 
 const EditTextWrapper = styled.View`
   border-radius: 30px;
-  padding: 20px;
+  padding: 10px;
   background-color: ${(props) => props.theme.colors.vgBlackAlpha00};
   box-shadow:0 5px 10px rgba(0,0,0,.1);
+  flex-direction:row;
+  align-items:center;
 `
 
 
@@ -29,10 +33,11 @@ type EditTextProps = React.ComponentProps<typeof TextInput> & {
   name : string;
   suptitle ?: string;
   editable ?: boolean;
+  withIcon ?: boolean;
 };
 
 const EditText = forwardRef<TextInput,EditTextProps>((props,ref) => {
-  const { colors : { vgBlack } } = useTheme();
+  const { colors : { vgBlack, vgPrimary } } = useTheme();
   const handlerOnKeyPress = (text: string) => {
       props.onKeyUp && props.onKeyUp({
           value : text,
@@ -41,10 +46,15 @@ const EditText = forwardRef<TextInput,EditTextProps>((props,ref) => {
   }
   return(
     <EditTextWrapper>
-      {props.suptitle && (
-      <TextLabelSuptitle>{props.suptitle}</TextLabelSuptitle>
+      {props.withIcon && (
+        <AntDesign name="heart" size={20} color={vgPrimary} />
       )}
-      <EditTextInput {...props} ref={ref} placeholderTextColor={vgBlack} onChangeText={handlerOnKeyPress} />
+      <DividerContainer p="0 0 0 10px">
+        {props.suptitle && (
+        <TextLabelSuptitle>{props.suptitle}</TextLabelSuptitle>
+        )}
+        <EditTextInput {...props} ref={ref} placeholderTextColor={vgBlack} onChangeText={handlerOnKeyPress} />
+      </DividerContainer>
     </EditTextWrapper>
   );
 });
