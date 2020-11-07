@@ -1,23 +1,28 @@
 import React from "react";
 import { ScrollView } from "react-native";
-import { FlatList } from "react-native-gesture-handler";
+import { useDispatch } from "react-redux";
+import { gamingActions } from "../../../features/gaming";
 import BaseButton from "../../components/atoms/Buttons/BaseButton";
-import EditText from "../../components/atoms/Inputs/EditText";
+import DividerContainer from "../../components/atoms/Dividers/DividerContainer";
 import DrawerWrapper from "../../components/atoms/Wrappers/DrawerWrapper";
-import ListLettersWritingsByUser from "../../components/organisms/ListLettersWritingsByUser";
+import useNavigate from "../../hooks/useNavigate";
 import HeaderPreviewLetter from "./HeaderPreviewLetter";
 import ListLettersWithValue from "./ListLettersWithValue";
-import {
-  GridColumnWrapper,
-  GridWrapper,
-} from "./ListLettersWithValue/elements";
 
 const GamingStatusScreen = () => {
+  const dispatch = useDispatch();
+  const { navigate } = useNavigate()
   return (
     <DrawerWrapper>
       <ScrollView>
         <HeaderPreviewLetter />
         <ListLettersWithValue/>
+        <DividerContainer pv="20px">
+          <BaseButton onPress={() => {
+              dispatch(gamingActions.reset());
+              navigate("createNewGame");
+          }}>jugar otra vez</BaseButton>
+        </DividerContainer>
       </ScrollView>
     </DrawerWrapper>
   );

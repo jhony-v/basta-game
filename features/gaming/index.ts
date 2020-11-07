@@ -5,7 +5,7 @@ import { GamingState, Word } from "./gaming";
 const gamingSlice = createSlice({
   name: "roomChatSlice",
   initialState: {
-    letter: "A",
+    letter: "",
     percentage: 0,
     timerCountDown: 0,
     timerToStart: 0,
@@ -30,6 +30,12 @@ const gamingSlice = createSlice({
       state.gaming = payload.gaming;
       state.letter = payload.letter;
     },
+    reset(state) {
+      state.gaming = false;
+      state.words = [];
+      state.letter = "";
+      state.id = "";
+    }
   },
 });
 

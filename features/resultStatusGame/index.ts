@@ -1,4 +1,5 @@
-import { createSlice, SliceCaseReducers } from "@reduxjs/toolkit";
+import { createSelector, createSlice, SliceCaseReducers } from "@reduxjs/toolkit";
+import { RootState } from "../../store";
 import { WordGame } from "../gaming/gaming";
 
 interface ResultStatusGameState {
@@ -29,3 +30,10 @@ export const {
   actions: resultStatusGameActions,
   reducer: resultStatusGameReducer,
 } = resultStatusGame;
+
+export const resultStatusGameSelectors = {
+  getListUserWords: createSelector(
+    (state: RootState) => state.resultStatusGame,
+    (resultStatusGame) => resultStatusGame.listUserWordsGame
+  )
+}

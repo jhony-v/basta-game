@@ -5,7 +5,6 @@ import { gamingActions } from "../../../features/gaming";
 import BaseButton from "../../components/atoms/Buttons/BaseButton";
 import DividerContainer from "../../components/atoms/Dividers/DividerContainer";
 import DrawerWrapper from "../../components/atoms/Wrappers/DrawerWrapper";
-import FlexWrapper from "../../components/atoms/Wrappers/FlexWrapper";
 import HeaderPreviewStatus from "./HeaderPreviewStatus";
 import ListEditTextWord from "./ListEditTextWord";
 

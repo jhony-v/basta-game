@@ -10,8 +10,9 @@ type ListLettersWritingsByUserProps = {
     value: string;
   }[];
   user?: {
-    avatar?: string;
+    fullName?: string;
     username?: string;
+    avatar ?: string;
   };
 };
 const ListLettersWritingsByUser = (props: ListLettersWritingsByUserProps) => {
@@ -21,7 +22,7 @@ const ListLettersWritingsByUser = (props: ListLettersWritingsByUserProps) => {
       ListHeaderComponent={<AccountWithAvatarGrapes {...props.user} />}
       renderItem={({ item: { key, value } }) => (
         <DividerContainer pv="10px">
-          <EditText name="" placeholder={key}  suptitle={key} value={value} editable={false} />
+          <EditText name="" placeholder={value !== "" ? key : ""}  suptitle={key} value={value} editable={false} />
         </DividerContainer>
       )}
     />

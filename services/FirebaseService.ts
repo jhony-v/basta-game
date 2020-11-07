@@ -14,6 +14,13 @@ export const firebaseServiceGetStatusGame = (id : string, callback : (status:Sta
     return unsubscribe;
 } 
 
+
+export const firebaseServiceStartGame = (id:string) => {
+    return firebaseFirestore.collection("games").doc(id).update({
+        gaming : true
+    });
+}
+
 export const firebaseServiceCreateNewRoom = ({id,...rest} : {id:string,gaming:boolean,letter:string}) => {
     return firebaseFirestore.collection("games").doc(id).set(rest);
 }

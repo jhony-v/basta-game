@@ -19,5 +19,6 @@ export interface WordGame {
   user : {
       username : string;
       fullName : string;
+      avatar : string;
   }
 }

@@ -4,6 +4,6 @@ import FlexWrapper from "./FlexWrapper";
 
 export default styled(FlexWrapper)`
   flex: 1;
-  padding-top: ${Constants.statusBarHeight};
+  padding-top: ${Constants.statusBarHeight}px;
   background-color: ${(props) => props.theme.colors.vgScreen};
 `;

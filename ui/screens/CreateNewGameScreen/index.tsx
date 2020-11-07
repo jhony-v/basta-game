@@ -1,5 +1,4 @@
 import React from "react";
-import BaseButton from "../../components/atoms/Buttons/BaseButton";
 import DividerContainer from "../../components/atoms/Dividers/DividerContainer";
 import BaseLabel from "../../components/atoms/Labels/BaseLabel";
 import DrawerWrapper from "../../components/atoms/Wrappers/DrawerWrapper";

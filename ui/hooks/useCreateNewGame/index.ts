@@ -1,6 +1,7 @@
-import { useDispatch } from "react-redux"
-import { gamingActions } from "../../../features/gaming";
-import { firebaseServiceCreateNewRoom } from "../../../services/FirebaseService";
+import { useDispatch, useSelector } from "react-redux"
+import { gamingActions, gamingSelectors } from "../../../features/gaming";
+import { firebaseServiceCreateNewRoom, firebaseServiceStartGame } from "../../../services/FirebaseService";
+import useNavigate from "../useNavigate";
 
 const randomLetterFromAlphabet = () => {
     const codeA = "a".charCodeAt(0);
@@ -23,6 +24,8 @@ const getRandomLetter = randomLetterFromAlphabet();
 
 const useCreateNewGame = () => {
     const dispatch = useDispatch();
+    const { navigate } = useNavigate();
+    const id = useSelector(gamingSelectors.getGameId);
     const createNewGame = () => {
         const id = getRandomId();
         const randomLetter = getRandomLetter();
@@ -35,8 +38,14 @@ const useCreateNewGame = () => {
             dispatch(gamingActions.setNewGameCode({id}));
         })
     }
+
+    const startGame = () => {
+        firebaseServiceStartGame(id);
+        navigate("showLetter");
+    }
     return {
-        createNewGame
+        createNewGame,
+        startGame
     }
 }
 

@@ -1,21 +1,20 @@
-import { useNavigation } from '@react-navigation/native'
 import React, { useEffect } from 'react'
 import { useSelector } from 'react-redux'
 import { gamingSelectors } from '../../../../features/gaming'
-import routes from '../../../../routes'
 import DividerContainer from '../../../components/atoms/Dividers/DividerContainer'
 import BaseLabel from '../../../components/atoms/Labels/BaseLabel'
 import DrawerWrapper from '../../../components/atoms/Wrappers/DrawerWrapper'
 import LetterCard from '../../../components/molecules/LetterCard'
+import useNavigate from '../../../hooks/useNavigate'
 import useTimerCountDown from '../../../hooks/useTimerCountDown'
 
 const CountDownToStart = () => {
     const { letter } = useSelector(gamingSelectors.gamingStatus);
     const { timer, running } = useTimerCountDown({from:3,autostart:true});
-    const { navigate } = useNavigation();
+    const { navigate } = useNavigate();
 
     useEffect(() => {
-        if(timer === 0) navigate(routes.gaming.name);
+        if(timer === 0) navigate("gaming");
     },[running]);
 
     return (

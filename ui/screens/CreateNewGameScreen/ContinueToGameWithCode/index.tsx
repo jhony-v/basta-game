@@ -1,21 +1,20 @@
-import { useNavigation } from "@react-navigation/native";
-import React, {  useCallback, useState } from "react";
+import React, {  useState } from "react";
 import { useDispatch } from "react-redux";
 import { gamingActions } from "../../../../features/gaming";
-import routes from "../../../../routes";
 import BaseButton from "../../../components/atoms/Buttons/BaseButton";
 import DividerContainer from "../../../components/atoms/Dividers/DividerContainer";
 import EditText from "../../../components/atoms/Inputs/EditText";
+import useNavigate from "../../../hooks/useNavigate";
 
 const ContinueToGameWithCode = () => {
   const [ code , setCode ] = useState<string>("");
   const dispatch = useDispatch();
-  const { navigate } = useNavigation();
+  const { navigate } = useNavigate();
   const onSetGameCode =() => {
     dispatch(gamingActions.setNewGameCode({
       id : code
     }))
-    navigate(routes.showLetter.name);
+    navigate("showLetter");
   }
   return (
     <>
