@@ -49,7 +49,7 @@ const EditText = forwardRef<TextInput,EditTextProps>((props,ref) => {
       {props.withIcon && (
         <AntDesign name="heart" size={20} color={vgPrimary} />
       )}
-      <DividerContainer p="0 0 0 10px">
+      <DividerContainer p="0 0 0 10px" w="100%">
         {props.suptitle && (
         <TextLabelSuptitle>{props.suptitle}</TextLabelSuptitle>
         )}
