@@ -35,6 +35,10 @@ const authSlice = createSlice({
         state.user = payload.user;
       }
     },
+    resetSession(state) {
+      state.isAuth = false;
+      state.loading = false;
+    }
   },
 });
 

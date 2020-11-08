@@ -17,7 +17,7 @@ const AccountWithAvatarGrapes = (props: AccountWithAvatarGrapesProps) => {
   return (
       <WrapperGrapes>
         <WrapperRoundedAvatar>
-          <AntDesign name="hearto" size={25} color={vgPrimary} />
+          <AntDesign name="hearto" size={40} color={vgPrimary} />
         </WrapperRoundedAvatar>
         <WrapperCardLabel>
           <BaseLabel weight>{props.username}</BaseLabel>

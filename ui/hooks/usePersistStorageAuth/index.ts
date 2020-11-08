@@ -55,6 +55,7 @@ const usePersistStorageAuth = () => {
     const destroySession = useCallback(async ()=> {
         await deleteStorageAsync();
         await firebaseService.deleteUser(id);
+        dispatch(authActions.resetSession());
     },[])
     return {
         setPersist,

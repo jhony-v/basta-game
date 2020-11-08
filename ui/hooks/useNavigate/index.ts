@@ -1,11 +1,11 @@
 import { useNavigation } from "@react-navigation/native";
-import routes from "../../../routes";
+import names from "../../../routes/names";
 
 const useNavigate = () => {
     const navigation = useNavigation();
-    type Routes = keyof typeof routes; 
+    type Routes = keyof typeof names; 
     const navigate = (name : Routes) => {
-        navigation.navigate(routes[name].name)
+        navigation.navigate(names[name])
     }
     return {
         navigate

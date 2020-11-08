@@ -1,6 +1,6 @@
 import React from 'react'
-import ScreenLoading from '../ui/components/organisms/ScreenLoading';
-import useAuthentication from '../ui/hooks/useAuthentication'
+import ScreenLoading from '../../ui/components/organisms/ScreenLoading';
+import useAuthentication from '../../ui/hooks/useAuthentication'
 import AuthGameRouter from './AuthGameRouter';
 import NoAuthGameRouter from './NoAuthGameRouter';
 

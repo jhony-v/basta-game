@@ -1,6 +1,6 @@
 import { createStackNavigator } from "@react-navigation/stack";
 import React from "react";
-import routes from ".";
+import routes from "..";
 
 const NoAuthGameRouter = () => {
   const { Screen, Navigator } = createStackNavigator();

@@ -6,8 +6,8 @@ export const WrapperRoundedAvatar = styled.View`
   background-color: ${(props) => props.theme.colors.vgBlackAlpha00};
   border-radius: 1000px;
   padding: 10px;
-  width:40px;
-  height:40px;
+  width:100px;
+  height:100px;
   justify-content:center;
   align-items:center;
 `;

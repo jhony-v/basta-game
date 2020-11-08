@@ -3,7 +3,7 @@ import "react-native-gesture-handler";
 import LayoutReduxProvider from "./ui/providers/LayoutReduxProvider";
 import LayoutThemeProvider from "./ui/providers/LayoutThemeProvider";
 import { NavigationContainer } from "@react-navigation/native";
-import MainRouter from "./routes/MainRouter";
+import MainRouter from "./routes/stacks/MainRouter";
 
 export default function App() {
   return (

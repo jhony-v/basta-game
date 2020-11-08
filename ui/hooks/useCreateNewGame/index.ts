@@ -26,6 +26,7 @@ const useCreateNewGame = () => {
     const dispatch = useDispatch();
     const { navigate } = useNavigate();
     const id = useSelector(gamingSelectors.getGameId);
+    
     const createNewGame = () => {
         const id = getRandomId();
         const randomLetter = getRandomLetter();
