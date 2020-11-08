@@ -1,24 +1,20 @@
-import React, { useEffect } from "react";
-import { ScrollView } from "react-native";
-import { useDispatch, useSelector } from "react-redux";
-import { gamingSelectors } from "../../../../features/gaming";
-import { resultStatusGameActions, resultStatusGameSelectors } from "../../../../features/resultStatusGame";
-import { firebaseServiceGetDataFromGame } from "../../../../services/FirebaseService";
+import React from "react";
+import { ActivityIndicator, ScrollView } from "react-native";
+import DividerContainer from "../../../components/atoms/Dividers/DividerContainer";
 import ListLettersWritingsByUser from "../../../components/organisms/ListLettersWritingsByUser";
+import useGetLettersWithValue from "../../../hooks/useGetLettersWithValue";
 import { GridColumnWrapper } from "./elements";
 
 const ListLettersWithValue = () => {
-  const dispach = useDispatch();
-  const listUserWords = useSelector(resultStatusGameSelectors.getListUserWords);
-  const gameId = useSelector(gamingSelectors.getGameId);
-  useEffect(() => {
-    const subscriber = firebaseServiceGetDataFromGame(gameId,(data) => {
-        dispach(resultStatusGameActions.fillData({ data }));
-      }
-    );
-    return () => subscriber();
-  },[]);
+  const { listUserWords, loading } = useGetLettersWithValue();
 
+  if(loading) {
+    return(
+    <DividerContainer pv="150px">
+      <ActivityIndicator color="white" size="large" />
+    </DividerContainer>
+    )
+  }
   return (
     <ScrollView horizontal>
       {listUserWords.map(({user,words},i)=>(

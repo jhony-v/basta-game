@@ -8,7 +8,7 @@ const shared = css`
 
 const ProgressTraker = styled.View`
   ${shared};
-  background-color: ${(props) => props.theme.colors.vgBlackAlpha00};
+  background-color: ${(props) => props.theme.colors.vgSecondaryDark};
   width: 100%;
 `;
 
@@ -18,7 +18,7 @@ type ProgressThumbTypes = {
 const ProgressThumb = styled.View<ProgressThumbTypes>`
   ${shared};
   width: ${props => props.percentage || 0}%;
-  background-color: ${(props) => props.theme.colors.vgSecondaryAlpha10};
+  background-color: ${(props) => props.theme.colors.vgThird};
 `;
 
 const ProgressBar = ({percentage}:ProgressThumbTypes) => {

@@ -16,7 +16,7 @@ const EditTextInput = styled.TextInput`
 const EditTextWrapper = styled.View`
   border-radius: 30px;
   padding: 10px;
-  background-color: ${(props) => props.theme.colors.vgBlackAlpha00};
+  background-color: ${(props) => props.theme.colors.vgSecondaryAlpha00};
   box-shadow:0 5px 10px rgba(0,0,0,.1);
   flex-direction:row;
   align-items:center;

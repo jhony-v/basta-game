@@ -15,6 +15,7 @@ const resultStatusGame = createSlice<ResultStatusGameState,SliceCaseReducers<Res
   },
   reducers: {
       fillData(state,{payload:{data}}) {
+        state.loading = false;
         state.listUserWordsGame = data; 
       },
       startLoading(state){

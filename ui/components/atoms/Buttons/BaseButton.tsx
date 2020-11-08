@@ -20,12 +20,12 @@ const WrapperButton = styled.View<WrapperButtonTypes>`
   align-items: center;
   box-shadow:0 1px 2px rgba(0,0,0,.2);  
   ${props => props.variant === "primary" && setBackgroundTheme(props.theme.colors.vgThird,props.theme.colors.vgThirdAlpha10)}    
-  ${props => props.variant === "secondary" && setBackgroundTheme(props.theme.colors.vgSecondary,props.theme.colors.vgSecondaryAlpha10)}
+  ${props => props.variant === "secondary" && setBackgroundTheme(props.theme.colors.vgSecondaryDark10,props.theme.colors.vgThird)}
   ${props => props.variant === "outline" && setBackgroundTheme(props.theme.colors.vgBlackAlpha00,props.theme.colors.vgSecondaryAlpha10)}
 `;
 
 type BaseButtonProps = WrapperButtonTypes & {
-  onPress : () => void
+  onPress : () => void,
 };
 
 const BaseButton: React.FC<BaseButtonProps> = ({ children, variant, onPress }) => {

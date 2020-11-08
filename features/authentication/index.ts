@@ -26,7 +26,7 @@ const authSlice = createSlice({
         [payload.key] : payload.value
       }
     },
-    closeAuthLoading(state){
+    endAuthLoading(state){
       state.loading = false;
     },
     getUser(state, { payload }) {

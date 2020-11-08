@@ -10,7 +10,7 @@ const useAuthentication = () => {
     const dispatch = useDispatch();
     useEffect(() => {
         dispatch(authActions.setAuthLoading())
-        getPersist().then(() => dispatch(authActions.closeAuthLoading()));
+        getPersist().then(() => dispatch(authActions.endAuthLoading()));
     },[])
     return auth;
 }

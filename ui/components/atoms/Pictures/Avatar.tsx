@@ -17,7 +17,7 @@ type AvatarProps = {
 } & ImageAvatarTypes;
 
 const Avatar = ({ image, dimension }: AvatarProps) => {
-  return <ImageAvatar dimension={dimension} source={{ uri: image }} />;
+  return <ImageAvatar dimension={dimension} source={{ uri: image }}  />;
 };
 
 export default Avatar;

@@ -7,6 +7,7 @@ import DividerContainer from "../../components/atoms/Dividers/DividerContainer";
 import DrawerWrapper from "../../components/atoms/Wrappers/DrawerWrapper";
 import HeaderPreviewStatus from "./HeaderPreviewStatus";
 import ListEditTextWord from "./ListEditTextWord";
+import ProgressCompleteFields from "./ProgressCompleteFields";
 
 const listWords = [
   {
@@ -44,13 +45,13 @@ const GamingScreen = () => {
 
   return (
     <DrawerWrapper>
-      <ScrollView>
-        <HeaderPreviewStatus/>
-        <ListEditTextWord/>
-        <DividerContainer m="20px 10px">
-        <BaseButton onPress={()=>console.log("ok")} variant="secondary">TERMINAR</BaseButton>
-        </DividerContainer>
-      </ScrollView>
+      <DividerContainer flex={1}>
+          <HeaderPreviewStatus/>
+        <ScrollView>
+          <ListEditTextWord/>
+        </ScrollView>
+      </DividerContainer>
+      <ProgressCompleteFields/>
     </DrawerWrapper>
   );
 };
