@@ -5,14 +5,14 @@ import { roomChatActions } from "../../../features/roomChat";
 import { firebaseService } from "../../../services/FirebaseService";
 import { RootState } from "../../../store";
 
-const useGameMessage = () => {
+const useGameMessages = () => {
   const dispatch = useDispatch();
   const gameId = useSelector(gamingSelectors.getGameId);
   const messages = useSelector((state: RootState) => state.roomChat.messages);
 
   useEffect(() => {
     const subscriber = firebaseService.getMessagesFromGame(gameId, (data) => {
-      dispatch(roomChatActions.fetchMessages(data));
+      dispatch(roomChatActions.fetchMessages({messages:data}));
     });
     return () => subscriber();
   }, []);
@@ -22,4 +22,4 @@ const useGameMessage = () => {
   };
 };
 
-export default useGameMessage;
+export default useGameMessages;

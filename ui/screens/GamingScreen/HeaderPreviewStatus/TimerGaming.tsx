@@ -5,7 +5,7 @@ import BaseLabel from "../../../components/atoms/Labels/BaseLabel";
 
 const TimerGaming = () => {
     const { sendAndNavigate } = useSendWordsToGame();
-    const { timer,running } = useTimerCountDown({from:20,autostart:true});
+    const { timer,running } = useTimerCountDown({from:1,autostart:true});
     useEffect(() => {
         if(timer === 0) {
           sendAndNavigate()

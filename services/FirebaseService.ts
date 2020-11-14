@@ -26,7 +26,10 @@ export const firebaseService = {
         });
         return unsubscribe;
     },
-    
+    sendMessageToGame :(id:string,data:{message:string,username:string}) => {
+        return firebaseFirestore.collection("games").doc(id).collection("messages").add(data);
+    },
+
     getDataFromGame: (id : string,callback: (data : any) => void) => {
         const unsubscribe = firebaseFirestore.collection("games").doc(id).collection("words").onSnapshot(request => {
             const requestData = request.docs.map(item=>item.data());

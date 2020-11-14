@@ -14,7 +14,7 @@ $ yarn start
 ## Screens
 * Auth
 * Create new Game
+* Show letter
 * Gaming
 * Gaming status
-* Show letter
 
