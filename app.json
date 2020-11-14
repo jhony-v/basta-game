@@ -6,10 +6,11 @@
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./assets/icon.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#AE13FF"
     },
+    "primaryColor" : "#B93CF4",
     "updates": {
       "fallbackToCacheTimeout": 0
     },
@@ -17,16 +18,18 @@
       "**/*"
     ],
     "ios": {
+      "bundleIdentifier": "com.jdev.tuttiFruttiGame",
       "supportsTablet": true
     },
     "android": {
+      "package": "com.jdev.tuttiFruttiGame",
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#FFFFFF"
+        "foregroundImage": "./assets/icon.png",
+        "backgroundColor": "#AE13FF"
       }
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./assets/icon.png"
     }
   }
 }

@@ -18,6 +18,14 @@ export const firebaseService = {
             user
         });
     },
+
+    getMessagesFromGame:(id: string, callback: (data : any) => void) => {
+        const unsubscribe = firebaseFirestore.collection("games").doc(id).collection("messages").onSnapshot(request => {
+            const requestData = request.docs.map(item =>item.data());
+            callback(requestData);
+        });
+        return unsubscribe;
+    },
     
     getDataFromGame: (id : string,callback: (data : any) => void) => {
         const unsubscribe = firebaseFirestore.collection("games").doc(id).collection("words").onSnapshot(request => {
